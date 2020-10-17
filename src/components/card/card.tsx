@@ -2,12 +2,14 @@ import React from 'react';
 import { StyledImage, StyledGrid, StyledMaterialCard, StyledCardMedia, GiftCardImage } from 'components/card/card.styles';
 import { Card, Box, Typography, Hidden, Grid, CardMedia, makeStyles, Theme, createStyles, CardContent } from '@material-ui/core';
 import { translate } from 'lib/translate';
+import { StyledLink } from 'components/styled-link';
 
 interface CardProps {
   size: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
   title?: string;
-  url?: string;
+  imageSrc?: string;
+  link?: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -26,7 +28,7 @@ const _Card = (props: CardProps) => {
   if (props.size == 'small') {
     return (
       <StyledMaterialCard>
-        <StyledCardMedia className={classes.media} image={props.url} />
+        <StyledCardMedia className={classes.media} image={props.imageSrc} />
         <CardContent>
           <Box>
             <Typography variant="body1">{props.title}</Typography>
@@ -42,7 +44,7 @@ const _Card = (props: CardProps) => {
       <>
         <Card>
           <CardMedia>
-            <GiftCardImage url={props.url}></GiftCardImage>
+            <GiftCardImage url={props.imageSrc}></GiftCardImage>
           </CardMedia>
         </Card>
       </>
@@ -53,7 +55,7 @@ const _Card = (props: CardProps) => {
     <>
       <Card raised>
         <CardMedia>
-          <StyledImage url={props.url}>
+          <StyledImage url={props.imageSrc}>
             <StyledGrid container direction="column">
               <Grid item xs>
                 <Box p={3} pt={2}>
@@ -70,15 +72,17 @@ const _Card = (props: CardProps) => {
                     {props.children}
                     <Box mt={3}>
                       <Box color="white" component="span">
-                        <Typography variant="body2">{translate('MegaMall_Card_Show', 'прикажи ги сите >')}</Typography>
+                        <StyledLink href={props.link} placeToRender="footer">
+                          <Typography variant="body2">{translate('MegaMall_Card_Show', 'прикажи ги сите >')}</Typography>
+                        </StyledLink>
                       </Box>
                     </Box>
                   </Hidden>
                   <Hidden lgUp>
                     <Box color="white" component="span">
-                      <Typography variant="body2">
-                        {translate('MegaMall_Card_Show', 'прикажи ги сите >')} {' >'}
-                      </Typography>
+                      <StyledLink href={props.link} placeToRender="footer">
+                        <Typography variant="body2">{translate('MegaMall_Card_Show', 'прикажи ги сите >')}</Typography>
+                      </StyledLink>
                     </Box>
                   </Hidden>
                 </Box>

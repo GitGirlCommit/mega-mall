@@ -18,38 +18,17 @@ const CategoryGrid = (props: ICategoryGrid) => {
   return (
     <>
       <Box>
-        <Grid container justify="space-between">
-          <Grid item sm={6} xs={12}>
+        <Grid container>
+          <Grid item xs={12}>
             <Typography variant="h5">{translate('MegaMall_Categorygrid_Search', 'Пребарај по категорија')}</Typography>
           </Grid>
-          <Hidden xsDown>
-            <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
-              <Box component="span">
-                <Typography variant="body2">
-                  {/* TODO here prikazi gi site needs to be #355C7C this color */}
-                  {translate('MegaMall_Categorygrid_Show', 'прикажи ги сите >')}
-                </Typography>
-              </Box>
-            </Grid>
-          </Hidden>
-
-          <Hidden smUp>
-            <Grid container item xs={12} alignItems="flex-end">
-              <Box component="span" mt={1}>
-                <Typography variant="body2">
-                  {/* TODO here prikazi gi site needs to be #355C7C this color */}
-                  {translate('MegaMall_Categorygrid_Show', 'прикажи ги сите >')}
-                </Typography>
-              </Box>
-            </Grid>
-          </Hidden>
         </Grid>
       </Box>
       <Box mt={3}>
         <Grid container spacing={3}>
           {props.menuItems.slice(0, 6).map(item => (
             <Grid item key={item.id} xs={12} md={6} lg={4}>
-              <Card title={item.title} url={item.imageSrc} size="large">
+              <Card title={item.title} imageSrc={item.imageSrc} link={item.link} size="large">
                 {item.children &&
                   item.children.slice(0, 3).map((child, index) => {
                     return (

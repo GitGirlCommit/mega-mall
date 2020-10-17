@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import { Typography, Grid, Hidden, createStyles, makeStyles, Theme } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox } from './product-item.styles';
-import { getTranslations } from 'services/translation-service';
 import { translate } from 'lib/translate';
 import { formatPrice } from 'utils/helpers/price-formatter';
 

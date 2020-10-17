@@ -38,7 +38,7 @@ services:
 
   mega-mall-api:
     container_name: mega-mall-api
-    image: docker.pkg.github.com/andjiev/mega-mall-server/mega-mall-api:1.7
+    image: docker.pkg.github.com/mega-mall/mega-mall-server/mega-mall-api:1.7.1
     restart: always
     environment:
       - 'ASPNETCORE_ENVIRONMENT=Development'
@@ -53,7 +53,7 @@ services:
 
   mega-mall-crawler:
     container_name: mega-mall-crawler
-    image: docker.pkg.github.com/andjiev/mega-mall-server/mega-mall-crawler:1.7
+    image: docker.pkg.github.com/mega-mall/mega-mall-server/mega-mall-crawler:1.7.1
     restart: always
     environment:
       - 'ASPNETCORE_ENVIRONMENT=Development'
@@ -68,7 +68,7 @@ services:
 
   mega-mall-writer:
     container_name: mega-mall-writer
-    image: docker.pkg.github.com/andjiev/mega-mall-server/mega-mall-writer:1.7
+    image: docker.pkg.github.com/mega-mall/mega-mall-server/mega-mall-writer:1.7.1
     restart: always
     environment:
       - 'ASPNETCORE_ENVIRONMENT=Development'

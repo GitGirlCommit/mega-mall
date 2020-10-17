@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem } from '@material-ui/core';
-import { Detailedproduct } from './detailed-product-view.data';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 import { translate } from 'lib/translate';

@@ -25,24 +25,10 @@ const ProductGrid = (props: IProps) => {
       {props.data && props.data.length ? (
         <>
           <Box>
-            <Grid container justify="space-between">
-              <Grid item sm={6} xs={12}>
+            <Grid container>
+              <Grid item xs={12}>
                 <Typography variant="h5">Најнови производи</Typography>
               </Grid>
-              <Hidden xsDown>
-                <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
-                  <Box component="span">
-                    <Typography variant="body2">прикажи ги сите {' >'}</Typography>
-                  </Box>
-                </Grid>
-              </Hidden>
-              <Hidden smUp>
-                <Grid container item xs={12} alignItems="flex-end">
-                  <Box component="span" mt={1}>
-                    <Typography variant="body2">прикажи ги сите {' >'}</Typography>
-                  </Box>
-                </Grid>
-              </Hidden>
             </Grid>
           </Box>
           <Box mt={3} pb={3}>
@@ -51,7 +37,7 @@ const ProductGrid = (props: IProps) => {
                 index < 8 ? (
                   <Grid item key={res.id} xs={12} md={3}>
                     <Link href={res.link}>
-                      <Card key={res.id} title={res.name.substring(0, 30)} url={res.imageSource || displayData[2].img} size="small">
+                      <Card key={res.id} title={res.name.substring(0, 30)} imageSrc={res.imageSource || displayData[2].img} size="small">
                         <Box component="span">{res.price === '' ? '0 ' + translate('MegaMall_Product_Price_Currency', 'МКД') : formatPrice(res.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Box>
                       </Card>
                     </Link>
