@@ -30,7 +30,7 @@ const ShopsList = (props: ShopsListProps) => {
       <Grid container spacing={3}>
         {currentPost.map(val => (
           <Grid item key={val.id} xs={12} sm={6} md={6} lg={2} xl={2}>
-            {/* <SubcategoryCard url={val.url} title={val.title} link={val.link}></SubcategoryCard> */}
+            {/* <SubcategoryCard imageSrc={val.url} title={val.title} link={val.link}></SubcategoryCard> */}
           </Grid>
         ))}
       </Grid>

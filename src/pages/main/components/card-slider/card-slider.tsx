@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+
+import { AppDispatch } from 'index';
+import ApplicationState from 'store/application-state';
 
 import SliderCard from './../../../../components/slider-card/slider-card';
 import Carousel from 'react-multi-carousel';
-import { Box, Grid, Typography, Link, Hidden } from '@material-ui/core';
+import { Box, Grid, Typography, Link } from '@material-ui/core';
 import { translate } from 'lib/translate';
-import { AppDispatch } from 'index';
-import ApplicationState from 'store/application-state';
 import { getMostPopularProducts } from 'store/main-store';
-import { connect } from 'react-redux';
-import { ProgressPlugin } from 'webpack';
 import { formatPrice } from 'utils/helpers/price-formatter';
 
 interface ICardSlider {
@@ -29,22 +29,6 @@ const CardSlider = (props: ICardSlider) => {
           <Grid item sm={6} xs={12}>
             <Typography variant="h5">Најпосетени производи</Typography>
           </Grid>
-          <Hidden xsDown>
-            <Grid container item xs={6} justify="flex-end" alignItems="flex-end">
-              <Box component="span">
-                {' '}
-                <Typography variant="body2">прикажи ги сите {' >'}</Typography>
-              </Box>
-            </Grid>
-          </Hidden>
-
-          <Hidden smUp>
-            <Grid container item xs={12} alignItems="flex-end">
-              <Box component="span" mt={1}>
-                <Typography variant="body2">прикажи ги сите {' >'}</Typography>
-              </Box>
-            </Grid>
-          </Hidden>
         </Grid>
       </Box>
       <Box mt={3} pb={3}>
